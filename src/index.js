@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// dependencies
+import { BrowserRouter } from 'react-router-dom'
+
+// css
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
+
+// components
+import Routes from './routes';
 import reportWebVitals from './reportWebVitals';
 
+// css
+import './index.css'
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.Fragment>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  </React.Fragment>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
