@@ -38,7 +38,7 @@ export default function Posthighlight(props) {
                             </div>
                             <div className="col-sm-12 col-md-8">
                             <div className="card-body">
-                                <Link to={`post/${post.id}/${post.title.replace(/ /g, "_")}`} className="card-title" style={{ fontSize: 'small' }}> {post.title} </Link>
+                                <Link to={`post/${post.id}/${post.title.replace(/ /g, "_")}`} className="card-title text-dark" style={{ fontSize: 'small', fontWeight: 'bold' }}> {post.title} </Link>
                                 <p className="card-text" style={{ overflow: 'hidden',height:"2rem", fontSize: 'small' }}>
                                     { post.description }
                                 </p>
