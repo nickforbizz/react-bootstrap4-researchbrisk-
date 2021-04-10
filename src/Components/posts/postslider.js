@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function postslider(props) {
-    console.log(props.height);
+    let height = props.height;
     return (
         <React.Fragment>
             <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -12,13 +12,13 @@ export default function postslider(props) {
                 </ol>
                 <div className="carousel-inner br-6">
                     <div className="carousel-item active">
-                    <img src="/images/blog_grid_05.jpg" className="cover_img" height = {props.height} className="d-block w-100" alt="/images/blog_grid_05.jpg" />
+                    <img src="/images/blog_grid_05.jpg" className="cover_img" height = {height} className="d-block w-100" alt="/images/blog_grid_05.jpg" />
                     </div>
                     <div className="carousel-item">
-                    <img src="/images/big_blog_01.jpg" className="cover_img" height = {props.height} className="d-block w-100" alt="/images/big_blog_01.jpg" />
+                    <img src="/images/big_blog_01.jpg" className="cover_img" height = {height} className="d-block w-100" alt="/images/big_blog_01.jpg" />
                     </div>
                     <div className="carousel-item">
-                    <img src="/images/blog_grid_04.jpg" className="cover_img" height = {props.height} className="d-block w-100" alt="/images/blog_grid_04.jpg" />
+                    <img src="/images/blog_grid_04.jpg" className="cover_img" height = {height} className="d-block w-100" alt="/images/blog_grid_04.jpg" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

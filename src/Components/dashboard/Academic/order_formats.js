@@ -21,14 +21,14 @@ export default function Order_formats(props) {
     const [format_id, setFormat_id] = useState('');
 
 
-    const headers = authHeader();
     const { register, handleSubmit, errors } = useForm();
-
+    
     console.log(AuthService.API_URL);
     // fetch order formats data 
-    const fetch_order_formats = AuthService.API_URL + 'fetch_order_formats';
     const post_order_formats = AuthService.API_URL + 'post_order_format';
     useEffect(() => {
+        const headers = authHeader();
+        const fetch_order_formats = AuthService.API_URL + 'fetch_order_formats';
         axios.get(fetch_order_formats, {
             headers: headers
         }).then(res => {
@@ -57,6 +57,7 @@ export default function Order_formats(props) {
 
     const delFormat = (id) => {
         let data = '';
+        const headers = authHeader();
         axios.post(AuthService.API_URL + 'delOrder_format/' + id, data, {
             headers: headers
         }).then(res => {
@@ -140,6 +141,7 @@ export default function Order_formats(props) {
     // send data
     const onSubmit = data => {
         let url = null;
+        const headers = authHeader();
         (data.add_flag === 'A') ? url = post_order_formats : url = AuthService.API_URL + 'patchOrder_format/' + format_id;
         axios.post(url, data, {
             headers: headers

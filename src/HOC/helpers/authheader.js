@@ -1,5 +1,3 @@
-import React from 'react';
-
 
 export function authHeader() {
     const user = JSON.parse(localStorage.getItem('user'));

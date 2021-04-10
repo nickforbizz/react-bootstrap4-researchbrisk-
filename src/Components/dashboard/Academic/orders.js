@@ -8,7 +8,6 @@ import AuthService from '../../../HOC/helpers/authservice';
 import { authHeader } from '../../../HOC/helpers/authheader';
 import { toast } from 'react-toastify';
 
-import {renderContent} from '../../../HOC/helpers/funcs'
 import { Link } from 'react-router-dom';
 
 

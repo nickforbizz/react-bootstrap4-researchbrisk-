@@ -22,14 +22,15 @@ export default function Order_cats(props) {
     const [category_id, setCategory_id] = useState('');
 
 
-    const headers = authHeader();
+    var headers = authHeader();
     const { register, handleSubmit, errors } = useForm();
+    const post_order_cats = AuthService.API_URL + 'post_order_cat';
 
     console.log(AuthService.API_URL);
     // fetch order formats data 
-    const fetch_order_cats = AuthService.API_URL + 'fetch_order_cats';
-    const post_order_cats = AuthService.API_URL + 'post_order_cat';
     useEffect(() => {
+        const fetch_order_cats = AuthService.API_URL + 'fetch_order_cats';
+        const headers = authHeader();
         axios.get(fetch_order_cats, {
             headers: headers
         }).then(res => {

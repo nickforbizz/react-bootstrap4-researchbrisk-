@@ -33,20 +33,18 @@ export default function SinglePost(props) {
         });
         
         let post = data.data;
-        let comments = data.data.blogs_comments;
+        let _comments = data.data.blogs_comments;
         setPost(post)
-        setComments(comments)
-        console.log(post);
+        setComments(_comments)
+        console.log(comments);
 
     }, []); 
 
     // addComment
     const addComment = () => {
         setShow_modal(true)
-        console.log(show_modal);
     }
     // addComment.end
-    console.log({post});
     if (!post) {
         return (
             <>
@@ -148,7 +146,7 @@ export default function SinglePost(props) {
                                                             <li className="clearfix">
                                                                 <img src="https://bootdey.com/img/Content/user_1.jpg" className="avatar" alt="" />
                                                                 <div className="post-comments">
-                                                                    <p className="meta">Dec 18, 2014 <a href="#">JohnDoe</a> says : <i className="pull-right"><a href="#"><small>Reply</small></a></i></p>
+                                                                    <p className="meta">Dec 18, 2014 <Link to="/">JohnDoe</Link> says : <i className="pull-right"><Link to="/"><small>Reply</small></Link></i></p>
                                                                     <p>
                                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                                                         Etiam a sapien odio, sit amet
@@ -158,7 +156,7 @@ export default function SinglePost(props) {
                                                             <li className="clearfix">
                                                                 <img src="https://bootdey.com/img/Content/user_2.jpg" className="avatar" alt="" />
                                                                 <div className="post-comments">
-                                                                    <p className="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i className="pull-right"><a href="#"><small>Reply</small></a></i></p>
+                                                                    <p className="meta">Dec 19, 2014 <Link to="/">JohnDoe</Link> says : <i className="pull-right"><Link to="/"><small>Reply</small></Link></i></p>
                                                                     <p>
                                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                                                         Etiam a sapien odio, sit amet
@@ -169,7 +167,7 @@ export default function SinglePost(props) {
                                                                     <li className="clearfix">
                                                                         <img src="https://bootdey.com/img/Content/user_3.jpg" className="avatar" alt="" />
                                                                         <div className="post-comments">
-                                                                            <p className="meta">Dec 20, 2014 <a href="#">JohnDoe</a> says :</p>
+                                                                            <p className="meta">Dec 20, 2014 <Link to="/">JohnDoe</Link> says :</p>
                                                                             <p>
                                                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                                                                 Etiam a sapien odio, sit amet

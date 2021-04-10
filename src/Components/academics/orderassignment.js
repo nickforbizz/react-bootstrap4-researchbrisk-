@@ -7,8 +7,6 @@ export default function Orderassignment(props) {
     const [blogCat, setBlogCat] = useState([]);
     const [blogFormat, setBlogFormat] = useState([]);
     const [blogLang, setBlogLang] = useState([]);
-    const [visible, setVisible] = useState(false);
-    const [feedback, setFeedback] = useState("processing ...");
     const [wordcount, setWordcount] = useState(275);
 
 
@@ -22,7 +20,7 @@ export default function Orderassignment(props) {
         callFromServer(`${process.env.REACT_APP_API_URL}fetch_order_langs`, setBlogLang)
     }, [])
 
-    const { register,reset, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
 
     }
