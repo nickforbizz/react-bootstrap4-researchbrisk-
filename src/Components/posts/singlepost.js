@@ -71,6 +71,20 @@ export default function SinglePost(props) {
                 <meta property="og:title" content={`ResearchBrisk || ${ post.blog_category.title }`} data-rh="true" />
                 <meta property="og:description" content={post.title} data-rh="true" />
                 <meta property="og:image" content={`${AuthService.IMG_URL}storage/${post.media_link.replace('public/', '')}`} data-rh="true" />
+
+                <meta name="title" content={`ResearchBrisk || ${ post.blog_category.title }`} />
+                <meta name="description" content={post.title}  data-rh="true"/>
+
+                <meta property="og:url" content="https://researchbrisk.com/"  data-rh="true"/>
+                <meta property="og:title" content={`ResearchBrisk || ${ post.blog_category.title }`}  data-rh="true"/>
+                <meta property="og:description" content={post.title}  data-rh="true"/>
+                <meta property="og:image" content={`${AuthService.IMG_URL}storage/${post.media_link.replace('public/', '')}`}  data-rh="true"/>
+                
+                <meta property="twitter:card" content="summary_large_image"  data-rh="true"/>
+                <meta property="twitter:url" content="https://researchbrisk.com/"  data-rh="true"/>
+                <meta property="twitter:title" content={`ResearchBrisk || ${ post.blog_category.title }`}  data-rh="true"/>
+                <meta property="twitter:description" content={post.title}  data-rh="true"/>
+                <meta property="twitter:image" content={`${AuthService.IMG_URL}storage/${post.media_link.replace('public/', '')}`}  data-rh="true"/>
             </Helmet>
             <div className="p-2 mt-4">
                 <div className="row">

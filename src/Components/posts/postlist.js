@@ -45,7 +45,7 @@ export default function Postlist(props) {
                             </p>
                             <hr/>
                             <div>
-                                <Link to={`post/${post.id}/${post.title}`} className="btn btn-sm btn-info float-right primary-color"> view </Link>
+                                <Link to={`post/${post.id}/${post.title.replace(/ /g, "_")}`} className="btn btn-sm btn-info float-right primary-color"> view </Link>
                                 <p className="card-text"><small className="text-muted">Last updated; <Moment fromNow>{ post.updated_at }</Moment></small></p>
                             </div>
                         </div>

@@ -20,7 +20,6 @@ export default function Posthighlight(props) {
             meta_postshighlight.dispatchFeaturedposts({type:"FAIL", payload: err.message})
         });
         meta_postshighlight.dispatchFeaturedposts({type:"SUCCESS", payload: dataposts.data.data})
-        console.log(meta_postshighlight);
     }, [])
 
 
@@ -38,7 +37,7 @@ export default function Posthighlight(props) {
                             </div>
                             <div className="col-sm-12 col-md-8">
                             <div className="card-body">
-                                <b className="card-title" style={{ fontSize: 'small' }}> {post.title} </b>
+                                <Link to={`post/${post.id}/${post.title.replace(/ /g, "_")}`} className="card-title" style={{ fontSize: 'small' }}> {post.title} </Link>
                                 <p className="card-text" style={{ overflow: 'hidden',height:"2rem", fontSize: 'small' }}>
                                     { post.description }
                                 </p>
