@@ -1,19 +1,17 @@
-import React, {  useReducer } from 'react'
-import { Link } from 'react-router-dom'
-
-import Navacademics from './../academics/nav.academics'
+import React from 'react'
 import Postlist from '../posts/postlist'
 import PostSlider from '../posts/postslider'
 import PostHighlight from '../posts/posthighlight'
 import Testimanials from '../testimonials/index'
 import Postcategories from '../posts/postcategories'
+import { Link } from 'react-router-dom'
 
 
 export default function Index(props) {
-    
     return (
         <div>
             
+
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-12 primary-color">
@@ -43,7 +41,19 @@ export default function Index(props) {
 
                 <div className="row">
                     <div className="col-sm-6 col-md-2 mt-5 mb-5  d-none d-md-block">
-                        <Navacademics />
+                        <div className="sticky-top top-nav">
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item primary-color btr-6">More on Academics</li>
+                                <li className="list-group-item">Home</li>
+                                <li className="list-group-item">Academic Bio</li>
+                                <li className="list-group-item">Pay Rates</li>
+                                <li className="list-group-item">Services</li>
+                                <li className="list-group-item">Work Samples</li>
+                                <li className="list-group-item">Testimonials</li>
+                            </ul>
+                            
+
+                        </div>
                     </div>
 
                     <div className="col-sm-12 col-md-7 col-lg-7 Xorder-md-3 mt-5">
@@ -54,14 +64,12 @@ export default function Index(props) {
                         <div className="sticky-top top-nav">
 
                             <div className="row">
-                                <div className="col-sm-12 primary-color btr-6 mt-2">
+                                <div className="col-sm-12 -bottom-8">
                                     <h6 className="primary-color p-3 text-white btr-6">Jobs</h6>
                                 </div>
 
-                                <div className="col-sm-12 p-0 mb-3">
-                                    <PostHighlight />
-                                </div>
-                            
+                                <PostHighlight />
+                               
                                 <div className="col-sm-12 mt-2 mb-3">
                                     <Postcategories />
                                 </div>
@@ -77,6 +85,8 @@ export default function Index(props) {
                 {/* .row */}
                 
             </div>
+
+
         </div>
     )
 }

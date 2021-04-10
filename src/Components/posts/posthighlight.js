@@ -1,88 +1,72 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import axios from 'axios';
 
-export default function posthighlight(props) {
+import AuthService from '../../HOC/helpers/authservice';
+import { authHeader } from '../../HOC/helpers/authheader';
+import {  PostHighlightContext } from '../../store/context/featuredpost.context';
+import  Skeleton from '../../HOC/helpers/skeleton'
+
+export default function Posthighlight(props) {
+    // featured post reducer here  
+    const meta_postshighlight  = useContext(PostHighlightContext); 
+    useEffect(async () => {
+        // call posts
+        const fetch_posts = AuthService.API_URL + 'fetch_blog';
+        const headers = authHeader();
+        let dataposts = await axios.get(fetch_posts, {
+            headers: headers
+        }).catch(err => {
+            console.log(err.message)
+            meta_postshighlight.dispatchFeaturedposts({type:"FAIL", payload: err.message})
+        });
+        meta_postshighlight.dispatchFeaturedposts({type:"SUCCESS", payload: dataposts.data.data})
+        console.log(meta_postshighlight);
+    }, [])
+
+
+    //render post card
+    const postCard = () => {
+        if(meta_postshighlight.featuredposts.payload.length > 0){
+            return meta_postshighlight.featuredposts.payload.map((post,i)=>(
+                <div className="col-sm-12 p-0" key={i}>
+                    <div className="card mb-1" >
+                        <div className="row no-gutters" style={{ overflow: 'hidden', position: "relative"}}>
+                            <div className="col-sm-12 col-md-4 cover_img" style={{
+                                overflow: 'hidden', 
+                                position: "relative", 
+                                background: `url('${AuthService.IMG_URL}storage/${post.media_link.replace('public/', '')}')`}}>
+                            </div>
+                            <div className="col-sm-12 col-md-8">
+                            <div className="card-body">
+                                <b className="card-title" style={{ fontSize: 'small' }}> {post.title} </b>
+                                <p className="card-text" style={{ overflow: 'hidden',height:"2rem", fontSize: 'small' }}>
+                                    { post.description }
+                                </p>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }}
+
+        
+    // check if there are featured posts
+    if(meta_postshighlight.featuredposts.loading && !meta_postshighlight.featuredposts.error){
+        console.log(meta_postshighlight.featuredposts.error);
+        return (
+            <>
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+            </>
+        )
+    }
     return (
         <React.Fragment>
-            <div className="col-sm-12">
-                <div className="card mb-3" >
-                    <div className="row no-gutters" style={{ overflow: 'hidden', position: "relative"}}>
-                        <div className="col-sm-12 col-md-4" style={{ overflow: 'hidden', position: "relative"}}>
-                            <img src="/images/big_blog_01.jpg" alt="..." height="100%" width="100%"/>
-                        </div>
-                        <div className="col-sm-12 col-md-8">
-                        <div className="card-body">
-                            <b className="card-title" style={{ fontSize: 'small' }}>Card title</b>
-                            <p className="card-text" style={{ overflow: 'hidden',height:"2rem", fontSize: 'small' }}>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                            </p>
 
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-sm-12">
-                <div className="card mb-3" >
-                    <div className="row no-gutters" style={{ overflow: 'hidden', position: "relative"}}>
-                        <div className="col-sm-12 col-md-4" style={{ overflow: 'hidden', position: "relative"}}>
-                            <img src="/images/big_blog_01.jpg" alt="..." height="100%" width="100%"/>
-                        </div>
-                        <div className="col-sm-12 col-md-8">
-                        <div className="card-body">
-                            <b className="card-title" style={{ fontSize: 'small' }}>Card title</b>
-                            <p className="card-text" style={{ overflow: 'hidden',height:"2rem", fontSize: 'small' }}>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                            </p>
-
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-sm-12">
-                <div className="card mb-3" >
-                    <div className="row no-gutters" style={{ overflow: 'hidden', position: "relative"}}>
-                        <div className="col-sm-12 col-md-4" style={{ overflow: 'hidden', position: "relative"}}>
-                            <img src="/images/big_blog_01.jpg" alt="..." height="100%" width="100%"/>
-                        </div>
-                        <div className="col-sm-12 col-md-8">
-                        <div className="card-body">
-                            <b className="card-title" style={{ fontSize: 'small' }}>Card title</b>
-                            <p className="card-text" style={{ overflow: 'hidden',height:"2rem", fontSize: 'small' }}>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                            </p>
-
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-sm-12">
-                <div className="card mb-3" >
-                    <div className="row no-gutters" style={{ overflow: 'hidden', position: "relative"}}>
-                        <div className="col-sm-12 col-md-4" style={{ overflow: 'hidden', position: "relative"}}>
-                            <img src="/images/big_blog_01.jpg" alt="..." height="100%" width="100%"/>
-                        </div>
-                        <div className="col-sm-12 col-md-8">
-                        <div className="card-body">
-                            <b className="card-title" style={{ fontSize: 'small' }}>Card title</b>
-                            <p className="card-text" style={{ overflow: 'hidden',height:"2rem", fontSize: 'small' }}>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                            </p>
-
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            { postCard() }
 
         </React.Fragment>
     )

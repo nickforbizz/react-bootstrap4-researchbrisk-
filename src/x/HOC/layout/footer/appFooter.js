@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 
 
@@ -18,21 +17,21 @@ export default function appFooter() {
                         <div className="col-sm-12 col-md-3">
                             <h5 className="underline">Solutions</h5>    <hr/>
                             <ul className="list-group mt-4 list-white">
-                                <li ><Link to="/academic_bio">Academic</Link></li>
-                                <li> <Link to="/posts">Posts</Link> </li>
-                                <li> <Link to="/post_view/56/Office Assistants Needed. Hurry and Apply">Podcasts</Link> </li>
-                                <li><Link to="/jobs">Jobs</Link></li>
-                                <li><Link to="/post_view/56/Office Assistants Needed. Hurry and Apply">Adverts</Link></li>
+                                <li ><a href="/academic_bio">Academic</a></li>
+                                <li> <a href="/posts">Posts</a> </li>
+                                <li> <a href="/post_view/56/Office Assistants Needed. Hurry and Apply">Podcasts</a> </li>
+                                <li><a href="/jobs">Jobs</a></li>
+                                <li><a href="/post_view/56/Office Assistants Needed. Hurry and Apply">Adverts</a></li>
                             </ul>
                         </div>
                         <div className="col-sm-12 col-md-3">
                             <h5 className="underline">Company</h5> <hr/>
                             <ul className="list-group mt-4 list-white">
-                                <li> <Link to="/about">About</Link></li>
-                                <li><Link to="/academicservices">Services</Link></li>
-                                <li><Link to="/academicworksamples">Work Samples</Link></li>
-                                <li><Link to="/academicpayrates">Pay Rates</Link></li>
-                                <li><Link to="/academictestimonials">Testimonials</Link></li>
+                                <li> <a href="/about">About</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/work_samples">Work Samples</a></li>
+                                <li><a href="/payrates">Pay Rates</a></li>
+                                <li><a href="/client_testimonials">Testimonials</a></li>
                             </ul>
                         </div>
                         <div className="col-sm-12 col-md-3">

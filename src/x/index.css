@@ -67,9 +67,6 @@ nav > div > div > ul > li > a { color: white !important;}
 
 .cover_img{
   object-fit: cover;
-  background-size: contain !important;
-  background-position: center top !important;
-  background-repeat: no-repeat !important;
 }
 
 /* single post */
@@ -311,9 +308,4 @@ font-weight: 800;
       right: 10px;
       font-size: 22px;
   }
-}
-
-
-.pointer{
-  cursor: pointer;
 }

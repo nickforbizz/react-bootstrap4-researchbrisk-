@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 // dependencies
 import { BrowserRouter } from 'react-router-dom'
 
-
 // css
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -17,13 +16,11 @@ import reportWebVitals from './reportWebVitals';
 import './index.css'
 
 ReactDOM.render(
-  
-  
-    <React.Fragment>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </React.Fragment>,
+  <React.Fragment>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  </React.Fragment>,
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
