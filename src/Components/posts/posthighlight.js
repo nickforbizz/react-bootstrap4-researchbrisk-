@@ -5,6 +5,7 @@ import AuthService from '../../HOC/helpers/authservice';
 import { authHeader } from '../../HOC/helpers/authheader';
 import {  PostHighlightContext } from '../../store/context/featuredpost.context';
 import  Skeleton from '../../HOC/helpers/skeleton'
+import { Link } from 'react-router-dom';
 
 export default function Posthighlight(props) {
     // featured post reducer here  
