@@ -36,9 +36,9 @@ export default function SinglePost(props) {
         let _comments = data.data.blogs_comments;
         setPost(post)
         setComments(_comments)
-        console.log(comments);
+        console.log(params);
 
-    }, []); 
+    }, [post_id]); 
 
     // addComment
     const addComment = () => {
